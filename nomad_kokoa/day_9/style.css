@@ -1,0 +1,48 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    border: 4px teal solid;
+    display: flex;
+    flex-direction: column;
+}
+
+.blank{
+    height: 10vh;
+    width: 100vw;
+}
+
+
+.playlist__navigation{
+    display: flex;
+    height: 7vh;
+    width: 100vw;
+}
+
+
+.currentSong{
+    display: flex;
+    height: 20vh;
+    width: 100vw;
+}
+
+.playback{
+    display: flex;
+    height: 7vh;
+    width: 100vw;
+}
+
+.songList{
+    display: flex;
+    height: 56vh;
+    width: 100vw;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+
+.songlist__box{
+    display: flex;
+    height: 7vh;
+    width: 100vw;
+}
