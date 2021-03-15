@@ -1,0 +1,23 @@
+html {
+    font-family: Helvetica !important;
+}
+
+.status-bar {
+    font-size: 12px;
+}
+
+.login-header__title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.login-header__description {
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.5;
+}
+
+.login-form__signup__text {
+    font-size: 12px;
+    font-weight: 500;
+}

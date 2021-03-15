@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f7f7f7;
+    padding: 20px;
+    font-size: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color: #1b1b1b;
+    font-family: Arial;
+}
+
+.phone {
+    width: 320px;
+    background-color: white;
+    min-height: 60vh;
+    border-radius: 30px;
+    box-shadow: 0 19px 38px rgba(227, 226, 235, 0.3), 0 15px 12px rgba(227, 226, 235, 0.2);
+    position: relative;
+    padding: 35px 25px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.artist {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 45px;
+}
+
+.artist img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 30px;
+    box-shadow: 0  19px 38px rgba(220, 195, 205, 0.2), 0 15px 12px rgba(220, 195, 205, 0.3);
+}
+
+.artist h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.artist h6 {
+    font-weight: 700;
+    opacity: 0.8;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+}
+
+.btns__btn {
+    padding: 10px 25px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.btns__btn:nth-child(1){
+    background-color: #1b1b1b;
+    color: white;
+    margin-right: 5px;
+}
+
+.btns__btn:nth-child(2){
+    box-shadow: 0 19px 38px rgba(227, 226, 235, 0.5), 0 -5px 12px rgba(227, 226, 235, 0.3);
+    margin-left: 5px;
+}
+
+
+.btns__btn:last-child i {
+    margin-right: 10px;
+  }
+
+.songs__song,
+.songs__data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.songs__song {
+    margin-bottom: 20px;
+}
+
+.songs__song img {
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.songs__author {
+    display: block;
+    font-weight: 600;
+    opacity: 0.6;
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+.songs__title {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.currently-playing {
+    margin-top:40px;
+    background-color:#222222;
+    width: 95%;
+    padding:20px 30px;
+    border-radius: 50px;
+    box-shadow:0 19px 38px rgba(34,34,34, 0.1), 0 15px 12px #22222233;
+    color:white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    bottom: 20px;
+    ;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+}
