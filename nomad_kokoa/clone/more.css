@@ -1,0 +1,89 @@
+@import "style/reset.css";
+@import "style/font.css";
+@import "style/status-bar.css";
+@import "style/page.css";
+@import "style/screen-header.css";
+@import "style/user-component.css";
+@import "style/navigation.css";
+@import "style/badge.css";
+@import "style/variables.css";
+
+
+
+.more-screen .icon-row {
+    padding: 0px 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .icon-row__icon i {
+    margin-top: 20px;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+
+  .icon-row__icon span {
+      font-size: 12px;
+      margin-top: 7px;
+  }
+
+.more-screen .icon-row__icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+  .more-suggestions {
+    margin-top: 16px;
+    border-top: var(--main-border);
+    padding-top: 25px;
+  }
+  
+  .more-suggestions__title {
+      margin-top: 20px;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 40px;
+  }
+
+
+  .more-suggestions__icons {
+    margin-top: 15px;
+    margin-bottom: 40px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .more-suggestions__icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .more-suggestions__icon-image {
+    width: 50px;
+    height: 50px;
+    background-color: var(--yellow);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .more-suggestions__icon-image i {
+    font-size: 15px;
+    color: white;
+  }
+
+  .more-suggestions__icon-text {
+      font-size: 12px;
+  }

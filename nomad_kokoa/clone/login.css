@@ -1,14 +1,9 @@
 @import "style/reset.css";
-@import "style/status-bar.css";
 @import "style/font.css";
+@import "style/status-bar.css";
+@import "style/page.css";
 
-body {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+
 
 .login-header {
     width: 90%;
@@ -37,12 +32,12 @@ body {
 .login-form input{
     width: 70%;
     border: none;
-    padding: 5.3% 5%;
-    background-color: whitesmoke;
+    border-bottom: 1px solid #a0a0a0;
+    padding: 5% 5%;
 }
 
 .login-form input:nth-child(2) {
-    margin-bottom: 6%;
+    margin-bottom: 5.5%;
 }
 
 
