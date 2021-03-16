@@ -2,6 +2,7 @@
 @import "style/font.css";
 @import "style/status-bar.css";
 @import "style/page.css";
+@import "style/animation.css";
 
 
 
@@ -41,10 +42,10 @@
 }
 
 
-.login-form input[type="submit"] {
-    width: 80%;
+.login-form input[type="submit button"] {
     background-color: #1b1b1b;
     color: white;
+    text-align: center;
 }
 
 
