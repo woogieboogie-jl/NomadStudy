@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFTs - aggregated</title>
+    <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet"></link>
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="/">NFTsChecker</a>
+        </h1>
+        <h3>aggregated : {% for NFT_requested in NFTs_requested %} r/{{NFT_requested}} {% endfor %}</h3>
+    </header>
+    <main>
+        {% for NFT_aggregated in NFTs_aggregated %}
+        <div>
+            <h3>
+                <a href="{{NFT_aggregated.link}}" target="_blank">{{NFT_aggregated.title}}</a>
+            </h3>
+            <h4>{{NFT_aggregated.upvote}} upvotes | r/{{NFT_aggregated.thread}}</h4>
+        <hr></hr>
+        </div>
+        {% endfor %}
+    </main>
+    </body>
+</html>

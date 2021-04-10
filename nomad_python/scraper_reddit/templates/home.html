@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFTsChecker</title>
+    <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet"></link>
+</head>
+<body>
+    <header>
+        <h1>NFT NEWS</h1>
+        <h3>A SERVICE TO AGGREGATE NFT NEWS</h3>
+    </header>
+</body>
+    <main>
+        <form action="/aggregated">
+            <h4>select your wanted NFTs to collect reddits from : </h4>
+            {% for NFT in NFTs_list %}
+            <ul>
+                <li>
+                    <input type="checkbox" name="{{NFT}}" id="{{NFT}}">
+                    <label for="{{NFT}}">r/{{NFT}}</label>
+                </li>
+            </ul>
+            {% endfor %}
+            <button type="submit">aggregate</button>
+        </form>
+    </main>
+</html>
