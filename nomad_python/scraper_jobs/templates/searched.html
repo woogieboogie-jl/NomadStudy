@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{searchingBy}} - Blockchain Jobs Search</title>
+  <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet"></link>
+  <body>
+    <header>
+      <a href="/" title="Go to home">
+        <span>BLOCKCHAIN JOBS</span>
+      </a>
+      <h3>{{resultsNumber}} job results for : {{searchingBy}}</h3>
+      <a href="/export?word={{searchingBy}}" title="home">Export to CSV</a>
+    </header>
+    <main>
+      {% for job in jobs%}
+      <div class="job-info">
+        <div class="job-info__text">
+          <h3>{{job.company}} | {{job.region}}</h3>
+          <h2>{{job.title}}</h2>
+        </div>
+        <div class="job-info__btn">
+          <a href="{{job.link_detail}}" target="_blank">DETAILS</a>
+          <a href="{{job.link_application}}" target="_blank">APPLICATION</a>
+        </div>
+      </div>
+      <hr />
+      {% endfor %}
+    </main>
+  </body>
+</html>
