@@ -1,0 +1,8 @@
+{
+    "python.pythonPath": "/Users/jaewooklee/.local/share/virtualenvs/nomad_django-6BdsuNCM/bin/python",
+    "python.linting.flake8Enabled": true,
+    "python.linting.plintEnabled": false,
+    "python.linting.Enabled": true,
+    "python.formatting.provider": "black",
+    "python.linting.flake8Args": ["--max--line-lenghts==88"]
+}
