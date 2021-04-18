@@ -4,5 +4,9 @@
     "python.linting.plintEnabled": false,
     "python.linting.Enabled": true,
     "python.formatting.provider": "black",
-    "python.linting.flake8Args": ["--max--line-lenghts==88"]
+    "python.linting.flake8Args": [
+        "--max--line-lenghts==88"
+    ],
+    "python.linting.pylintEnabled": false,
+    "python.linting.enabled": true
 }
