@@ -40,7 +40,10 @@ DJANGO_APPS = [
 ]
 
 
-THIRD_PARTY_APPS = ["django_countries"]
+THIRD_PARTY_APPS = [
+    "django_countries",
+    "django_seed",
+    ]
 
 
 PROJECT_APPS = [
@@ -76,7 +79,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

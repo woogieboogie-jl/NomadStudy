@@ -1,13 +1,12 @@
 import os
 from django.db import models
 from django_countries.fields import CountryField
+from django.urls import reverse
 from core import models as core_models
 from users import models as user_models
 
+
 # Create your models here.
-
-
-
 
 
 class AbstractItem(core_models.TimeStampedModel):
@@ -97,10 +96,12 @@ class Room(core_models.TimeStampedModel):
         self.city = str.capitalize(self.city)
         super().save(*args, **kwargs)
 
+    def get_absolute_url(self):
+        return reverse('rooms:detail', kwargs={'pk': self.pk})
 
     def total_rating(self):
         all_reviews = self.reviews.all()
         all_ratings = []
         for review in all_reviews:
             all_ratings.append(review.rating_average())
-        return sum(all_ratings)/len(all_ratings)
+        return 0 if len(all_ratings) == 0 else round(sum(all_ratings)/len(all_ratings),1)

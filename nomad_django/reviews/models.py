@@ -8,7 +8,7 @@ class Review(core_models.TimeStampedModel):
 
     """Review Model Definition"""
     review = models.TextField()
-    accruacy = models.IntegerField()
+    accuracy = models.IntegerField()
     communication = models.IntegerField()
     cleanliness = models.IntegerField()
     location = models.IntegerField()
@@ -19,7 +19,7 @@ class Review(core_models.TimeStampedModel):
 
     def rating_average(self):
         avg = (
-            self.accruacy
+            self.accuracy
             + self.communication
             + self.cleanliness
             + self.location

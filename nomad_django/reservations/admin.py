@@ -21,6 +21,6 @@ class ReservationAdmin(admin.ModelAdmin):
     )
 
     list_filter = (
-        'status',
+        'status',   
     )
 
