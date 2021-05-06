@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+export NODE_PATH='/Users/jaewooklee/github/NomadStudy/nomad_django/list/lib/node_modules'
+export NPM_CONFIG_PREFIX='/Users/jaewooklee/github/NomadStudy/nomad_django/list'
+export npm_config_prefix='/Users/jaewooklee/github/NomadStudy/nomad_django/list'
+exec 'list/bin/node' "$@"

@@ -8,5 +8,6 @@
         "--max--line-lenghts==88"
     ],
     "python.linting.pylintEnabled": false,
-    "python.linting.enabled": true
+    "python.linting.enabled": true,
+    "git.ignoreLimitWarning": true
 }
