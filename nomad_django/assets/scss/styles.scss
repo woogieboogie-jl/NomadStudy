@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.search-box{
+    transition: box-shadow 0.2s linear;
+}
+
+
+.nav_link{
+    @apply border-b-2 flex items-center border-white hover:border-gray-600 h-full;
+    a {
+        @apply py-8 px-3; 
+    }
+}
