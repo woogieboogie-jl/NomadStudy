@@ -10,7 +10,8 @@ module.exports = {
       },
       borderRadius: {
         xl : "1.5rem"
-      }
+      },
+      fontWeight: ['hover', 'focus'],
     },
   },
   variants: {

@@ -13,27 +13,24 @@
         <div class="container rounded-xl mx-auto bg-gray-800 h-50vh my-24 bg-cover bg-center" style="background-image:url('static/img/background_sample.jpg')">
 
         </div>
-        <div class="flex flex-wrap mx-auto">
-        {% for room  in  rooms %}
-            {% include 'partials/room_card.html' with room=room %}
-        {% endfor %}
+        <div class="flex flex-wrap">
+            {% for room  in  rooms %}
+                {% include 'partials/room_card.html' with room=room %}
+            {% endfor %}
         </div>
 
-            Page {{page_obj.number}} of  {{page_obj.paginator.num_pages}}
-
-            <h5>
+        <div class="flex items-center mx-auto container justify-center pb-8">
             {% if page_obj.has_previous %}
-                <a href="?page={{page_obj.previous_page_number}}">Previous</a>
+            <a href="?page={{page_obj.previous_page_number}}"><i class="fas fa-chevron-left"></i></a>
             {% endif %}
             
-            {% for page.obj in page.obj.paginator.page_range %}
-                <a href="?page={{page_obj}}">{{page_obj}}</a>
-            {% endfor %}
-
+            <span class="mx-8">Page {{page_obj.number}} of  {{page_obj.paginator.num_pages}}</span>
+            
             {% if page_obj.has_next %}
-                <a href="?page={{page_obj.next_page_number}}">Next</a>
+            <a href="?page={{page_obj.next_page_number}}"><i class="fas fa-chevron-right"></i></a>
             {% endif %}
-            </h5>
+        </div>
+
     </div>
 
 {% endblock content %}

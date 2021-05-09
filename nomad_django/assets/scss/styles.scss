@@ -13,3 +13,11 @@
         @apply py-8 px-3; 
     }
 }
+
+.btn{
+    @apply w-full flex items-center justify-center border font-light mb-2 rounded-md p-3;
+}
+
+input{
+    @apply w-full flex items-center justify-center border font-light mb-2 rounded-md p-3 text-left placeholder-gray-400 focus:outline-none focus:border-black
+}

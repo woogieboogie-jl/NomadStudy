@@ -20,13 +20,12 @@
         </a>
 
         {% block search-bar %}
-        <form method="get" action="{% url "rooms:search" %}" class="w-9/12">
+        <form method="get" action="{% url "rooms:search" %}" class="w-9/12 mt-2">
             <input class="search-box border text-sm font-medium placeholder-gray-400 focus:outline:none px-4 py-2 rounded-md w-full shadow-sm hover:shadow-md" name = "city" placeholder="Search by City">
         </form>
         {% endblock search-bar %}
 
         </div>
-
 
         {% include "partials/nav.html" %}
 
