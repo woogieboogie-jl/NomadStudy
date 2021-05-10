@@ -13,8 +13,9 @@ Login
 
     <form method="POST", action='{% url "users:login" %}' class="w-full">
         {% csrf_token %}
-        <input type="email" placeholder="Email Address">
-        <input type="password" placeholder="Password">
+        {% for field in form %}
+            {% include 'partials/form_input.html' with field=field%}
+        {% endfor %}
         <button class="btn mt-5 bg-black text-white">Login</button>
     </form>
     <div>
