@@ -12,6 +12,13 @@ module.exports = {
         xl : "1.5rem"
       },
       fontWeight: ['hover', 'focus'],
+      minHeight: {
+        '0': '0',
+        '25vh': '25vh',
+        '50vh': '50vh',
+        '75vh': '75vh',
+        '100vh': '100vh',
+        },
     },
   },
   variants: {
