@@ -22,6 +22,17 @@ input{
     @apply w-full flex items-center justify-center border font-light mb-2 rounded-md p-3 text-left placeholder-gray-400 focus:outline-none focus:border-black;
 }
 
+input,
+textarea{
+    @apply w-full flex items-center justify-center border font-light mb-2 rounded-md p-3 text-left placeholder-gray-400 focus:outline-none focus:border-black;
+    resize: none;
+}
+
+select {
+    height: 30px;
+
+}
+
 
 form{
     .input{
@@ -70,4 +81,9 @@ form{
     &.warning{
         @apply bg-yellow-400;
     }
+}
+
+
+.border-section {
+    @apply border-b border-gray-400 pb-5 mt-4 mb-2;
 }
