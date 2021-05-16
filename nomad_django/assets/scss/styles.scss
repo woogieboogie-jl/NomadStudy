@@ -8,9 +8,9 @@
 
 
 .nav_link{
-    @apply border-b-2 flex items-center border-white hover:border-gray-600 h-full;
+    @apply flex items-center justify-center border-white hover:border-gray-600 w-1/4 h-full md:mr-4 md:border-b-2;
     a {
-        @apply py-8 px-3; 
+        @apply py-4 text-center; 
     }
 }
 
@@ -20,6 +20,9 @@
 
 input{
     @apply w-full flex items-center justify-center border font-light mb-2 rounded-md p-3 text-left placeholder-gray-400 focus:outline-none focus:border-black;
+    #id_instant_book{
+        display: inline;
+    }
 }
 
 input,
@@ -29,14 +32,12 @@ textarea{
 }
 
 select {
-    height: 30px;
-
+    @apply w-full border font-light mb-2 rounded-md h-10;
 }
-
 
 form{
     .input{
-     @apply mb-2;
+     @apply mb-2 w-full;
      &.has_error{
          input {
              @apply border-red-500 mb-px;
@@ -86,4 +87,13 @@ form{
 
 .border-section {
     @apply border-b border-gray-400 pb-5 mt-4 mb-2;
+}
+
+
+
+.cal-grid{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-gap: 2px;
+    justify-items: center;
 }

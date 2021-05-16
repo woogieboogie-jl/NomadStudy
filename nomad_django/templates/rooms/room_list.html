@@ -10,7 +10,7 @@
 
     <div class="container mx-auto">
 
-        <div class="container rounded-xl mx-auto bg-gray-800 h-50vh my-24 bg-cover bg-center" style="background-image:url('static/img/background_sample.jpg')">
+        <div class="container mx-auto bg-gray-800 h-50vh my-24 bg-cover bg-center md:rounded-xl" style="background-image:url('static/img/background_sample.jpg')">
 
         </div>
         <div class="flex flex-wrap">
@@ -21,13 +21,13 @@
 
         <div class="flex items-center mx-auto container justify-center pb-8">
             {% if page_obj.has_previous %}
-            <a href="?page={{page_obj.previous_page_number}}"><i class="fas fa-chevron-left"></i></a>
+            <a href="?page={{page_obj.previous_page_number}}"><i class="fas fa-chevron-left text-sm md:text-md"></i></a>
             {% endif %}
             
-            <span class="mx-8">Page {{page_obj.number}} of  {{page_obj.paginator.num_pages}}</span>
+            <span class="mx-6 text-sm md:text-md">Page {{page_obj.number}} of  {{page_obj.paginator.num_pages}}</span>
             
             {% if page_obj.has_next %}
-            <a href="?page={{page_obj.next_page_number}}"><i class="fas fa-chevron-right"></i></a>
+            <a href="?page={{page_obj.next_page_number}}"><i class="fas fa-chevron-right text-sm md:text-md"></i></a>
             {% endif %}
         </div>
 

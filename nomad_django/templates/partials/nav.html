@@ -1,9 +1,28 @@
-    <ul class="h-full flex items-center text-sm font-medium">
+    <ul class="w-full h-full flex justify-evenly text-xs font-medium md:text-sm md:justify-end">
         {% if user.is_authenticated %}
-            <li class="nav_link"><a href="{{user.get_absolute_url}}">Profile</a></li>
-            <li class="nav_link"><a href="{% url "users:logout" %}">Log out</a></li>
+            <li class="nav_link">
+                <a href="{% url "users:switch-hosting" %}" class="">
+                    
+                    {% if request.session.is_hosting %}
+                        HOST
+                    {% else %}
+                        GUEST
+                    {% endif %}
+                        
+                </a>
+            </li>
+            <div class="w-px h-full border-r md:hidden"></div>
+            {% if request.session.is_hosting %}
+            <li class="nav_link"><a href="{% url "rooms:create" %}">CREATE</a></li>
+            <div class="w-px h-full border-r md:hidden"></div>
+            {% endif %}
+
+            <li class="nav_link"><a href="{{user.get_absolute_url}}">PROFILE</a></li>
+            <div class="w-px h-full border-r md:hidden"></div>
+            <li class="nav_link"><a href="{% url "users:logout" %}">LOGOUT</a></li>
         {% else %}
-            <li class="nav_link"><a href="{% url "users:login" %}">Log in</a></li>
-            <li class="nav_link"><a href="{% url "users:signup" %}">Sign Up</a></li>
+            <li class="nav_link"><a href="{% url "users:login" %}">LOGIN</a></li>
+            <div class="w-px h-full border-r md:hidden"></div>
+            <li class="nav_link"><a href="{% url "users:signup" %}">SIGNUP</a></li>
         {% endif %}
     </ul>

@@ -1,10 +1,11 @@
+import calendar
 import os
 from django.db import models
 from django_countries.fields import CountryField
 from django.urls import reverse
 from core import models as core_models
 from users import models as user_models
-
+from cal import Calendar
 
 # Create your models here.
 
@@ -36,6 +37,7 @@ class Amenity(AbstractItem):
     
     class Meta:
         verbose_name_plural = "Amenities"
+    
 
 class Facility(AbstractItem):
 
@@ -99,6 +101,10 @@ class Room(core_models.TimeStampedModel):
     def get_absolute_url(self):
         return reverse('rooms:detail', kwargs={'pk': self.pk})
 
+    def items_exist(self):
+        print(self)
+        return True if self.count() != 0 else False
+
     def total_rating(self):
         all_reviews = self.reviews.all()
         all_ratings = []
@@ -107,9 +113,22 @@ class Room(core_models.TimeStampedModel):
         return 0 if len(all_ratings) == 0 else round(sum(all_ratings)/len(all_ratings),1)
 
     def first_photo(self):
-        photo,= self.photos.all()[:1]
-        return photo.file.url
+        try:    
+            photo,= self.photos.all()[:1]
+            return photo.file.url
+        except ValueError:
+            return None
 
     def get_next_four_photos(self):
         photos = self.photos.all()[1:5]
         return photos
+
+    def get_all_photos(self):
+        photos = self.photos.all()
+        return photos
+
+
+    def get_calendars(self):
+        this_month = Calendar.get_date_info(Calendar, count=0)
+        next_month = Calendar.get_date_info(Calendar, count=1)
+        return [this_month, next_month]
