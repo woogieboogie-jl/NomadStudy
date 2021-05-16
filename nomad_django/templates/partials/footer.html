@@ -1,3 +1,23 @@
-<footer class="container mx-auto text-center text-xs md:text:sm mb-10 md:mb-0 py-8 border-top font-thin text-grey-400">
-     &copy; woogieboogie, All rights reserved
+{% load i18n %}
+
+<div class="mx-auto w-4/5 h-px border-b my-3 md:my-5"></div>
+<footer class="container mx-auto text-center text-xs md:text:sm mb-10 md:mb-0 pb-8 border-top font-thin text-grey-400">
+     <div class="mb-1 md:mb-5 flex justify-center">
+          {% get_current_language as LANGUAGE_CODE %}
+          <select class="w-1/2 md:w-1/6 h-8" id="js-lang">
+               <option value="en"
+               {% if LANGUAGE_CODE == 'en' %}
+                 selected
+               {% endif %}
+               >English</option>
+               <option value="fr"
+               {% if LANGUAGE_CODE == 'fr' %}
+                 selected
+               {% endif %}
+               >French</option>
+          </select>
+     </div>
+     <div class="w-full flex flex-col mx-auto">
+          <span>&copy; woogieboogie, {% trans 'All rights reserved' %} </span>
+     </div>
 </footer>

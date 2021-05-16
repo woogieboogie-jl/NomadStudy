@@ -19,6 +19,8 @@
 
             <li class="nav_link"><a href="{{user.get_absolute_url}}">PROFILE</a></li>
             <div class="w-px h-full border-r md:hidden"></div>
+            <li class="nav_link"><a href="{% url "lists:see-favs" %}">FAVS({{user.list.rooms.count}})</a></li>
+            <div class="w-px h-full border-r md:hidden"></div>
             <li class="nav_link"><a href="{% url "users:logout" %}">LOGOUT</a></li>
         {% else %}
             <li class="nav_link"><a href="{% url "users:login" %}">LOGIN</a></li>

@@ -1,4 +1,5 @@
 import uuid
+from django.utils.translation import gettext_lazy as _
 from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 from django.db import models
@@ -17,9 +18,9 @@ class User(AbstractUser):
     GENDER_OTHER = "other"
 
     GENDER_CHOICES = (
-        (GENDER_MALE, "Male"),
-        (GENDER_FEMALE, "Female"),
-        (GENDER_OTHER, "other")
+        (GENDER_MALE, _("Male")),
+        (GENDER_FEMALE, _("Female")),
+        (GENDER_OTHER, _("other"))
     )
 
     LANGUAGE_ENGLISH = "english"
@@ -53,12 +54,12 @@ class User(AbstractUser):
 
     avatar = models.ImageField(upload_to = "avatars", blank=True)
     gender = models.CharField(
-        choices = GENDER_CHOICES, max_length=10, blank = True
+        _('gender'), choices = GENDER_CHOICES, max_length=10, blank = True
     )
-    bio = models.TextField(default="" , blank = True)
+    bio = models.TextField(_("bio"), default="" , blank = True)
     birthday = models.DateField(null=True)
     language = models.CharField(
-        choices = LANGUAGE_CHOICES, max_length=10, blank = True, default=LANGUAGE_KOREAN
+        _("language"), choices = LANGUAGE_CHOICES, max_length=10, blank = True, default=LANGUAGE_KOREAN
     )
     currency = models.CharField(
         choices = CURRENCY_CHOICES, max_length=3, blank=True, default=CURRENCY_KRW
@@ -83,7 +84,7 @@ class User(AbstractUser):
                 )
             
             send_mail(
-                'Verify Airbnb Account', 
+                _('Verify Airbnb Account'), 
                 strip_tags(html_message) + html_message, 
                 settings.EMAIL_FROM, 
                 [self.email], 
