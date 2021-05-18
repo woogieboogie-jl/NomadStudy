@@ -42,7 +42,7 @@
                 </div>
                 <div class="ml-5 flex flex-col">
                     <span class="text-xs m-1.5">Contact your Airbnb Host</span>
-                    <a href="#" class="btn h-12 bg-black text-white hover:bg-white hover:text-black">Message Host</a>
+                    <a href="{% url 'conversations:go' reservation.room.host.pk reservation.guest.pk %}" class="btn h-12 bg-black text-white hover:bg-white hover:text-black">Message Host</a>
                 </div>
             </div>
             <div class="hidden md:inline w-2/3 flex">

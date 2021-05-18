@@ -43,6 +43,9 @@ form{
              @apply border-red-500 mb-px;
          }
      }
+     &.message{
+         max-height: 20%;
+     }
     }
 }
 

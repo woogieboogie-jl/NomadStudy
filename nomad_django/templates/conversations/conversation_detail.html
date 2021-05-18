@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+
+{% block page_title %}
+{{user.first_name}}'s conversation
+{% endblock page_title %}
+
+{% block content %}
+<div class="min-h-75vh flex flex-col md:mb-20">
+    <div class="w-full mt-4 md:mt-10 mb-4 md:mb-8 text-center text-xl font-medium">Conversation with {{conversation.participants.first.first_name}}</div>
+    <div class="container w-5/6 md:w-1/3 mx-auto mb-5 items-center border-t"></div>
+    
+    <div class="w-full h-5/6 md:w-2/3 mx-auto md:mb-5 flex flex-col md:flex-row items-start">
+        <div class="hidden w-1/3 flex items-center flex-col border md:inline py-5 mr-2">
+            <div class="flex w-full h-1/3 items-end text-md justify-center mb-3">Conversation Between:</div>
+            <div class="flex w-full h-1/2 justify-evenly items-start mx-auto px-8">
+            {% for user in conversation.participants.all %}
+            {% if forloop.last %}
+                <span class="block h-full pt-7 text-md">&</span>
+            {% endif %}
+            <div class="flex flex-col items-center">
+                {% include 'mixins/user_avatar.html' with user=user %}
+                <span class="mt-1">{{user.first_name}}</span>
+            </div>    
+            {% endfor %}
+            </div>
+        </div>
+        <div class="flex flex-col w-full md:w-2/3">
+            <div class="min-h-50vh flex flex-col flex-grow w-full md:border md:py-4">
+                
+                {% if conversation.messages.count == 0 %}
+                <div class="flex items-center justify-center h-50vh">
+                    <span class="text-center text-gray-400">
+                        No Messages, Write a message!
+                    </span>
+                </div> 
+                {% else %}
+                {% for message in conversation.messages.all %}
+                
+                
+                {% if message.user.pk == user.pk %}
+
+                <div class="self-end mx-5">
+                    <span class="ml-2 text-sm font-medium">{{message.user.first_name}}</span>
+                    <div class="mt-px w-56 p-4 rounded-xl break-words bg-gray-500">{{message.message}}</div>
+                </div>
+
+                {% else %}
+                
+                <div class="mx-5">
+                    <span class="ml-2 text-sm font-medium">{{message.user.first_name}}</span>
+                    <div class="mt-px p-4 w-56 rounded-xl break-words bg-gray-200">{{message.message}}</div>
+                </div>
+
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+                <div>
+                </div>
+            </div>
+            <form class="hidden w-full mt-2 h-12 flex items-center justify-center md:block" method="POST">
+                {% csrf_token %}
+                <div class="w-5/6 md:w-full flex">
+                <input class="border-box rounded-none w-full" placeholder="Write a Message" name="message" required>
+                <div class="w-1/5 ml-px">
+                    <button class="btn hover:bg-white hover:text-black bg-black text-white">Send</button>
+                </div>
+                </div>
+            </form>
+        </div>
+        <form class="w-full mt-16 h-12 flex items-center justify-center md:hidden" method="POST">
+            {% csrf_token %}
+            <div class="w-5/6 md:w-full flex">
+            <input class="border-box rounded-none w-full" placeholder="Write a Message" name="message" required>
+            <div class="w-1/5 ml-1">
+                <button class="btn hover:bg-white hover:text-black bg-black text-white">Send</button>
+            </div>
+            </div>
+        </form>
+    </div>
+
+
+
+</div>
+
+
+{% endblock content %}
+
+
