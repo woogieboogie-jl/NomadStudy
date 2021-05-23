@@ -13,7 +13,6 @@ django-seed = "*"
 django-dotenv = "*"
 requests = "*"
 pipenv-to-requirements = "*"
-psycopg2 = "*"
 
 [dev-packages]
 
