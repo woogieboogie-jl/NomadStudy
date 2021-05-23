@@ -25,7 +25,7 @@ SECRET_KEY = '^r1*thfcalba!wiasu5+n397$b)u7^m^#g^xb7yr(e5ve)+^(*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-if DEBUG is False:
+if DEBUG :
     DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -47,7 +47,10 @@ else:
 
 
 
-ALLOWED_HOSTS = [".elasticbeanstalk.com"]
+ALLOWED_HOSTS = [
+    ".elasticbeanstalk.com",
+    "127.0.0.1",
+    ]
 
 
 # Application definition
