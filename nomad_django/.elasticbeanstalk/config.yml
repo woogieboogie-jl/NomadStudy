@@ -1,15 +1,15 @@
 branch-defaults:
   default:
-    environment: nomad-airbnb
+    environment: nomad-django
     group_suffix: null
 environment-defaults:
   clone-airbnb:
     branch: null
     repository: null
 global:
-  application_name: clone_airbnb
+  application_name: nomad-django
   branch: null
-  default_ec2_keyname: clone_airbnb
+  default_ec2_keyname: nomad-django
   default_platform: Python 3.7 running on 64bit Amazon Linux 2
   default_region: ap-northeast-2
   include_git_submodules: true
