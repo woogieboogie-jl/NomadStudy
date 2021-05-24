@@ -40,7 +40,7 @@ else:
         'HOST': os.environ.get('RDS_HOST'),
         'USER': os.environ.get('RDS_USER'),
         'PASSWORD': os.environ.get('RDS_PASSWORD'),
-        'PORT': "5432",
+        'PORT': os.environ.get('RDS_PORT'),
 
     }
 }
