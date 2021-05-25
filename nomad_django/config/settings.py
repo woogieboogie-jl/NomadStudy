@@ -50,6 +50,8 @@ else:
 ALLOWED_HOSTS = [
     ".elasticbeanstalk.com",
     "127.0.0.1",
+    "3.37.47.205",
+    "13.124.182.3",
     ]
 
 
