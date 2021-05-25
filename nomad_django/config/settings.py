@@ -35,7 +35,7 @@ if DEBUG :
 else:
     DATABASES = {
     'default': {
-        'ENGINE': "django.db.backends.postgresql_psycopg2",
+        'ENGINE': "django.db.backends.postgresql",
         'NAME': os.environ.get('RDS_NAME'),
         'HOST': os.environ.get('RDS_HOST'),
         'USER': os.environ.get('RDS_USER'),
