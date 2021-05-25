@@ -9,7 +9,7 @@ environment-defaults:
 global:
   application_name: nomad-django
   branch: null
-  default_ec2_keyname: nomad-django
+  default_ec2_keyname: aws-eb
   default_platform: Python 3.7 running on 64bit Amazon Linux 2
   default_region: ap-northeast-2
   include_git_submodules: true
