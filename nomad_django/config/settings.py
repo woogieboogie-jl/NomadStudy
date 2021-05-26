@@ -199,7 +199,7 @@ LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)
 
 LANGUAGE_COOKIE_NAME = "django_language"
 
-#Sentry
+#Sentry + Static Uploads
 
 if not DEBUG:
 
