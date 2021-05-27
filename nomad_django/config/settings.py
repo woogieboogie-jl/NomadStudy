@@ -168,12 +168,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 
-if DEBUG:
-        STATIC_URL = '/static/'
-        STATICFILES_DIRS = [
-            os.path.join(BASE_DIR, 'static')
-       ]
-else:
+if not DEBUG:
     DEFALUT_FILE_STORAGE = "config.custom_storages.UploadStorage"
     STATICFILES_STORAGE = "config.custom_storages.StaticStorage"
     AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
@@ -184,6 +179,11 @@ else:
     AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.ap-northeast-2.amazonaws.com"
     STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/static/"
     STATIC_ROOT = os.path.join(BASE_DIR,'var','static')
+else:
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'static')
+    ]
 
 AUTH_USER_MODEL = 'users.User'
 
