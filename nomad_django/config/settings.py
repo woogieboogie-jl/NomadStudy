@@ -168,10 +168,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
 
 if not DEBUG:
     DEFALUT_FILE_STORAGE = "config.custom_storages.UploadStorage"
@@ -184,6 +180,13 @@ if not DEBUG:
     AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.ap-northeast-2.amazonaws.com"
     STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/static/"
 
+else:
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
 
 
 AUTH_USER_MODEL = 'users.User'
