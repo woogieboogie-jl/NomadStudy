@@ -17,7 +17,7 @@ DEBUG = True
 
 DATABASES = {
 'default': {
-    'ENGINE': "django.db.backends.postgresql",
+    'ENGINE': 'django.db.backends.postgresql_psycopg2',
     'NAME': os.environ.get('RDS_NAME'),
     'HOST': os.environ.get('RDS_HOST'),
     'USER': os.environ.get('RDS_USER'),
