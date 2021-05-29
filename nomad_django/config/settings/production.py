@@ -26,6 +26,8 @@ DATABASES = {
     }
 }
 
+for i in DATABASES:
+    print(i)
 
 ALLOWED_HOSTS = [
     'nomad-django.eba-i7hwiw2c.ap-northeast-2.elasticbeanstalk.com',
