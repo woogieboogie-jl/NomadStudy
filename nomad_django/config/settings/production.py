@@ -29,9 +29,6 @@ DATABASES = {
 
 ALLOWED_HOSTS = [
     'nomad-django.eba-i7hwiw2c.ap-northeast-2.elasticbeanstalk.com',
-    '3.37.47.205',
-    '127.0.0.1',
-    '13.124.182.3',
     ]
 
 
