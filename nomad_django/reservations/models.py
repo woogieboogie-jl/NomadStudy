@@ -8,7 +8,7 @@ import reservations
 
 class BookedDay(core_models.TimeStampedModel):
 
-    day = models.DateField()
+    day = models.DateField(null=True, blank=True)
     reservation = models.ForeignKey("Reservation", on_delete=models.CASCADE)
     created = models.DateTimeField(default=f"{timezone.now()}")
     updated = models.DateTimeField(default=f"{timezone.now()}")
@@ -40,8 +40,8 @@ class Reservation(core_models.TimeStampedModel):
         max_length=12, choices=STATUS_CHOICES, default=STATUS_PENDING
     )
 
-    check_in = models.DateField()
-    check_out = models.DateField()
+    check_in = models.DateField(null=True, blank=True)
+    check_out = models.DateField(null=True, blank=True)
     guest = models.ForeignKey('users.User', on_delete=models.CASCADE)
     room = models.ForeignKey('rooms.Room', on_delete=models.CASCADE)
 
