@@ -38,7 +38,7 @@ ALLOWED_HOSTS = [
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 AWS_STORAGE_BUCKET_NAME = "nomad-django-production-bucket"
-AWS_LOCATION = 'static'
+AWS_REGION = 'ap-northeast-2'
 AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_REGION}.amazonaws.com"
 
 STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/"
