@@ -1,6 +1,6 @@
 branch-defaults:
   default:
-    environment: nomad-django
+    environment: null
     group_suffix: null
 environment-defaults:
   clone-airbnb:
@@ -10,7 +10,7 @@ environment-defaults:
     branch: null
     repository: null
 global:
-  application_name: nomad_django
+  application_name: nomad_django_production
   branch: null
   default_ec2_keyname: aws-eb
   default_platform: Python 3.8 running on 64bit Amazon Linux 2
