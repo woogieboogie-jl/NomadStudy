@@ -10,7 +10,7 @@ environment-defaults:
     branch: null
     repository: null
 global:
-  application_name: nomad_django_production
+  application_name: nomad_django
   branch: null
   default_ec2_keyname: aws-eb
   default_platform: Python 3.8 running on 64bit Amazon Linux 2
