@@ -27,6 +27,7 @@ DATABASES = {
 }
 
 ALLOWED_HOSTS = [
+    '.woogieboogie.dev'
     'nomad-django.eba-i7hwiw2c.ap-northeast-2.elasticbeanstalk.com',
     '3.35.206.190',
     '13.124.101.71',
